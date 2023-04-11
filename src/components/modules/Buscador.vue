@@ -1,16 +1,12 @@
 <template>
     <section>
         <div class="buscador-main">
-            <div class="buscador-title">
-                <h1>LOCALIZE A SUA SALA</h1>
-                <p>Informe seu RA, Curso ou Disciplina</p>
-            </div>
-            <div class="buscador-container">
-                <form action="">
-                    <input type="text" v-model="input" placeholder="Ex.: Medicina Veterinária" name="buscador">
-                    <button type="submit">Buscar sala</button>
-                </form>
-            </div>
+            <h1 class="buscador-title">LOCALIZE A <span id="buscador-title-suasala">SUA SALA</span></h1>
+            <p class="buscador-title">Informe seu RA, Curso ou Disciplina</p>
+            <form action="">
+                <input type="text" class="buscador-input" v-model="input" placeholder="Ex.: Medicina Veterinária" name="buscador">
+                <button type="submit" class="buscador-button">Buscar sala</button>
+            </form>
         </div>
     </section>
 </template>
@@ -23,7 +19,7 @@
 
 <style>
     .buscador-main {
-        background-color: grey;
+        background-color: white;
         padding: 20px;
         width: 755px;
         margin-left: auto;
@@ -33,8 +29,29 @@
     .buscador-title {
         text-align: left;
     }
-    input {
+    #buscador-title-suasala {
+        color: red;
+    }
+    .buscador-button {
+        color: white;
+        background-color: red;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 2px solid red;
+        border-left: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .buscador-input {
         width: 87%;
-        align-content: left;
+        padding: 10px;
+        display: inline-block;
+        border: 2px solid #FFB0B0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        box-sizing: border-box;
+    }
+    .buscador-input::-webkit-input-placeholder {
+        opacity: 0.5;
     }
 </style>
