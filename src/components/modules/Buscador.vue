@@ -4,16 +4,31 @@
             <h1 class="buscador-title">LOCALIZE A <span id="buscador-title-suasala">SUA SALA</span></h1>
             <p class="buscador-title">Informe seu RA, Curso ou Disciplina</p>
             <form action="">
-                <input type="text" class="buscador-input" v-model="input" placeholder="Ex.: Medicina Veterinária" name="buscador">
+                <input type="text" id="buscadorInput" class="buscador-input" v-model="input" placeholder="Ex.: Medicina Veterinária" name="buscador">
                 <button type="submit" class="buscador-button">Buscar sala</button>
+                <h1>COntador POG: {{ counter }}</h1>
+                <button @click="decrement">Teste ---</button>
+                <button @click="increment">Teste +++</button>
             </form>
         </div>
     </section>
 </template>
 
 <script>
+    import { mapGetters, mapActions } from 'vuex';
     export default{
-        
+        name: 'Counter',
+        computed: {
+            ...mapGetters ([
+                'counter'
+            ])
+        },
+        methods: {
+            ...mapActions ([
+                'decrement',
+                'increment'
+            ])
+        }
     }
 </script>
 
